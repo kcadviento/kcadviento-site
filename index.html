@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC Adviento-Lee | AI Governance · Cybersecurity · EdTech Leadership</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafaf9;
+            --text: #1c1917;
+            --muted: #78716c;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+            --card-bg: #ffffff;
+            --border: #e7e5e4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--muted);
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+        .hero .location {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Section */
+        section { padding: 40px 0; }
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* About */
+        .about p {
+            font-size: 1.05rem;
+            color: #44403c;
+            max-width: 680px;
+        }
+
+        /* Role Cards */
+        .roles { display: flex; flex-direction: column; gap: 20px; }
+        .role-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: box-shadow 0.2s;
+        }
+        .role-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .role-card .org { font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .role-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+        .role-card p { font-size: 0.95rem; color: var(--muted); }
+
+        /* Education */
+        .edu-grid { display: flex; flex-direction: column; gap: 16px; }
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .edu-item:last-child { border-bottom: none; }
+        .edu-item .degree { font-weight: 500; }
+        .edu-item .school { color: var(--muted); font-size: 0.9rem; }
+        .edu-item .year { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+
+        /* Expertise */
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Certifications */
+        .certs { display: flex; flex-wrap: wrap; gap: 12px; }
+        .cert {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+        .links a:hover { opacity: 0.7; }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2rem; }
+            .edu-item { flex-direction: column; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>KC Adviento-Lee</h1>
+            <p class="tagline">AI Governance · Cybersecurity · EdTech Leadership</p>
+            <p class="location">Toronto, Canada 🇨🇦 · Manila, Philippines 🇵🇭</p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="about">
+            <h2>About</h2>
+            <p>Technology leader with 12+ years of experience spanning cybersecurity, AI governance, privacy, and education. I work at the intersection of risk management and innovation — building frameworks that keep organizations secure while helping the next generation of tech talent thrive. Currently leading across three domains: corporate governance, higher education, and ed-tech entrepreneurship.</p>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Current Roles</h2>
+            <div class="roles">
+                <div class="role-card">
+                    <p class="org">Klick Health · Toronto</p>
+                    <h3>Director of Risk & Compliance</h3>
+                    <p>Leading corporate governance, IS audit, vendor risk management, privacy technology, and AI governance initiatives. Specializing in NIST AI RMF-aligned assessments for AI-powered tools across US/Canada pharma, GDPR, and BC/DR frameworks.</p>
+                </div>
+                <div class="role-card">
+                    <p class="org">The Manila Times College of Subic · Philippines</p>
+                    <h3>Head of Technology & Dean, School of Computing and Media Arts</h3>
+                    <p>Driving digital transformation across the institution — from curriculum design in AI and computing to technology infrastructure, LMS deployment, and Google Workspace administration. Leading the CineMMA Likha Film Festival initiative.</p>
+                </div>
+                <div class="role-card">
+                    <p class="org">OJT Connect · ojtconnect.com</p>
+                    <h3>Founder & CEO</h3>
+                    <p>Building a B2B SaaS platform connecting Filipino students with North American remote internship opportunities. 100+ partner institutions, 2,000+ students trained. Bridging the gap between academic learning and industry experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Education</h2>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <div>
+                        <div class="degree">Doctor of Education — Educational Leadership</div>
+                        <div class="school">Western University</div>
+                    </div>
+                    <div class="year">In Progress</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <div class="degree">Master of Management in Artificial Intelligence (MMAI)</div>
+                        <div class="school">Smith School of Business, Queen's University</div>
+                    </div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <div class="degree">Master of Liberal Arts — Management Information Systems</div>
+                        <div class="school">Harvard University Extension School</div>
+                    </div>
+                    <div class="year">2023</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <div class="degree">Bachelor of Science, Information Technology</div>
+                        <div class="school">University of Santo Tomas</div>
+                    </div>
+                    <div class="year">2012</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Expertise</h2>
+            <div class="tags">
+                <span class="tag">AI Governance</span>
+                <span class="tag">NIST AI RMF</span>
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">Privacy & GDPR</span>
+                <span class="tag">Vendor Risk Management</span>
+                <span class="tag">IS Audit</span>
+                <span class="tag">Compliance Frameworks</span>
+                <span class="tag">Digital Transformation</span>
+                <span class="tag">EdTech</span>
+                <span class="tag">Curriculum Design</span>
+                <span class="tag">Responsible AI</span>
+                <span class="tag">BC/DR Planning</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Certifications</h2>
+            <div class="certs">
+                <div class="cert">🔒 Harvard Cybersecurity Certificate</div>
+                <div class="cert">📊 Certified Scrum Master (CSM)</div>
+                <div class="cert">📈 Certified Datorama Solutions Architect</div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Connect</h2>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/kcadviento/" target="_blank">LinkedIn ↗</a>
+                <a href="https://instagram.com/kcadviento" target="_blank">Instagram ↗</a>
+                <a href="https://www.goodreads.com/user/show/23249087-kc-adviento" target="_blank">Goodreads ↗</a>
+                <a href="https://ojtconnect.com" target="_blank">OJT Connect ↗</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 KC Adviento-Lee. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
