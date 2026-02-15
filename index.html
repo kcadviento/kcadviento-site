@@ -325,6 +325,10 @@
             padding: 24px;
             transition: background 0.3s, border-color 0.3s;
         }
+        .project-card.featured {
+            background: rgba(138, 100, 220, 0.15);
+            border-color: rgba(138, 100, 220, 0.3);
+        }
         .project-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
         .project-card p { font-size: 0.9rem; color: var(--muted); }
         .project-link {
@@ -632,15 +636,15 @@
         <section class="fade-in">
             <h2>Projects</h2>
             <div class="projects">
-                <div class="project-card">
+                <div class="project-card featured">
                     <h3>AI Compliance Tracker</h3>
                     <p>Regulatory mapping tool that tracks AI regulations across jurisdictions and aligns them to business operations, identifying compliance requirements based on where and how AI is deployed.</p>
                 </div>
-                <div class="project-card">
+                <div class="project-card featured">
                     <h3>Multi-Agent AI Assistant</h3>
                     <p>Designed and built a multi-agent assistant system with specialized sub-agents for task automation, content generation, and project management. Focused on identifying which business processes benefit from automation and which require human judgment.</p>
                 </div>
-                <div class="project-card">
+                <div class="project-card featured">
                     <h3>AI Role Play Interview System</h3>
                     <p>Interactive AI-powered journalism simulation for interview training and evaluation. Features real-time feedback, response analysis for evasion and contradictions, adaptive follow-up questions, and Likert-scale scoring. Built with Python, Flask, and OpenAI GPT-4o.</p>
                 </div>
