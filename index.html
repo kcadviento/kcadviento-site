@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Adviento-Lee | AI Governance · Cybersecurity · EdTech Leadership</title>
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="KC Adviento-Lee">
+    <meta property="og:description" content="AI Governance · Cybersecurity · EdTech Leadership. Technology leader with 12+ years of experience spanning risk management, privacy, and education.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kcadviento.com">
+    <meta name="description" content="KC Adviento-Lee — Technology leader specializing in AI governance, cybersecurity, privacy, and education. Director of Risk & Compliance, Dean, Co-founder & CTO.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="KC Adviento-Lee">
+    <meta name="twitter:description" content="AI Governance · Cybersecurity · EdTech Leadership">
+
+    <!-- Favicon (purple shield) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,20 +29,95 @@
             --accent-light: #ede9fe;
             --card-bg: #ffffff;
             --border: #e7e5e4;
+            --nav-bg: rgba(250, 250, 249, 0.9);
+            --shadow: rgba(0,0,0,0.06);
         }
+        [data-theme="dark"] {
+            --bg: #0f0f0f;
+            --text: #e7e5e4;
+            --muted: #a8a29e;
+            --accent: #a78bfa;
+            --accent-light: #1e1533;
+            --card-bg: #1a1a1a;
+            --border: #2a2a2a;
+            --nav-bg: rgba(15, 15, 15, 0.92);
+            --shadow: rgba(0,0,0,0.3);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            transition: background 0.3s, color 0.3s;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, background 0.3s;
+        }
+        nav.visible { transform: translateY(0); }
+        nav .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .nav-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        nav .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: var(--accent); }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .theme-toggle:hover { border-color: var(--accent); transform: scale(1.1); }
+
         /* Hero */
         .hero {
-            padding: 80px 0 60px;
+            padding: 120px 0 60px;
             text-align: center;
         }
         .hero h1 {
@@ -42,12 +131,39 @@
             font-size: 1.1rem;
             color: var(--muted);
             font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .hero .mission {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--accent);
             margin-bottom: 24px;
+            font-weight: 400;
         }
         .hero .location {
             font-size: 0.9rem;
             color: var(--muted);
         }
+
+        /* What I Do */
+        .what-i-do {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .wid-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: box-shadow 0.2s, transform 0.2s, background 0.3s;
+        }
+        .wid-card:hover { box-shadow: 0 4px 20px var(--shadow); transform: translateY(-2px); }
+        .wid-card .icon { font-size: 2rem; margin-bottom: 12px; }
+        .wid-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+        .wid-card p { font-size: 0.82rem; color: var(--muted); }
 
         /* Section */
         section { padding: 40px 0; }
@@ -72,8 +188,28 @@
         /* About */
         .about p {
             font-size: 1.05rem;
-            color: #44403c;
+            color: var(--muted);
             max-width: 680px;
+        }
+
+        /* Currently */
+        .currently {
+            background: var(--accent-light);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 20px;
+        }
+        .currently h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .currently p {
+            font-size: 0.95rem;
+            color: var(--text);
         }
 
         /* Role Cards */
@@ -83,15 +219,13 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 28px;
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s, background 0.3s;
         }
-        .role-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .role-card:hover { box-shadow: 0 4px 20px var(--shadow); }
         .role-card .org { font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
         .role-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 4px; }
         .role-card .dates { font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
         .role-card p { font-size: 0.95rem; color: var(--muted); }
-        .role-card ul { font-size: 0.9rem; color: var(--muted); margin-top: 8px; padding-left: 20px; }
-        .role-card ul li { margin-bottom: 4px; }
 
         /* Previous Experience (collapsible) */
         .previous-toggle {
@@ -134,6 +268,7 @@
             align-items: baseline;
             padding: 16px 0;
             border-bottom: 1px solid var(--border);
+            transition: border-color 0.3s;
         }
         .edu-item:last-child { border-bottom: none; }
         .edu-item .degree { font-weight: 500; }
@@ -149,6 +284,7 @@
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
+            transition: background 0.3s, color 0.3s;
         }
 
         /* Certifications */
@@ -160,6 +296,7 @@
             padding: 14px 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            transition: background 0.3s, border-color 0.3s;
         }
 
         /* Projects */
@@ -169,12 +306,13 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
+            transition: background 0.3s, border-color 0.3s;
         }
         .project-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
         .project-card p { font-size: 0.9rem; color: var(--muted); }
 
         /* Contact */
-        .links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
         .links a {
             color: var(--accent);
             text-decoration: none;
@@ -183,6 +321,36 @@
             transition: opacity 0.2s;
         }
         .links a:hover { opacity: 0.7; }
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .email-btn:hover { opacity: 0.85; }
+
+        /* Resume Download */
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .resume-btn:hover { background: var(--accent); color: white; }
 
         /* Footer */
         footer {
@@ -197,34 +365,89 @@
             height: 1px;
             background: var(--border);
             margin: 0;
+            transition: background 0.3s;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Mobile */
         @media (max-width: 600px) {
-            .hero { padding: 60px 0 40px; }
+            .hero { padding: 100px 0 40px; }
             .hero h1 { font-size: 2rem; }
+            .hero .mission { font-size: 1rem; }
+            .what-i-do { grid-template-columns: 1fr; }
             .edu-item { flex-direction: column; gap: 4px; }
+            nav .nav-links a.nav-hide-mobile { display: none; }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <span class="nav-name">KC Adviento-Lee</span>
+            <div class="nav-links">
+                <a href="#about" class="nav-hide-mobile">About</a>
+                <a href="#experience" class="nav-hide-mobile">Experience</a>
+                <a href="#education" class="nav-hide-mobile">Education</a>
+                <a href="#connect">Connect</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" id="themeBtn">🌙</button>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <section class="hero">
             <h1>KC Adviento-Lee</h1>
             <p class="tagline">AI Governance · Cybersecurity · EdTech Leadership</p>
+            <p class="mission">"I build the guardrails so innovation can move fast and stay safe."</p>
             <p class="location">Toronto, Canada 🇨🇦 · Manila, Philippines 🇵🇭</p>
         </section>
 
-        <hr class="divider">
-
-        <section class="about">
-            <h2>About</h2>
-            <p>Technology leader with 12+ years of experience spanning cybersecurity, AI governance, privacy, and education. I work at the intersection of risk management and innovation, building frameworks that keep organizations secure while helping the next generation of tech talent thrive. Currently leading across four domains: corporate governance, higher education, ed-tech entrepreneurship, and mathematics enrichment.</p>
+        <!-- What I Do -->
+        <section class="fade-in">
+            <div class="what-i-do">
+                <div class="wid-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Governance & Risk</h3>
+                    <p>AI governance, cybersecurity, privacy, compliance frameworks</p>
+                </div>
+                <div class="wid-card">
+                    <div class="icon">🎓</div>
+                    <h3>Education</h3>
+                    <p>Curriculum design, digital transformation, academic leadership</p>
+                </div>
+                <div class="wid-card">
+                    <div class="icon">🚀</div>
+                    <h3>Startups</h3>
+                    <p>Ed-tech platforms, product development, bridging talent gaps</p>
+                </div>
+            </div>
         </section>
 
         <hr class="divider">
 
-        <section>
+        <section id="about" class="about fade-in">
+            <h2>About</h2>
+            <p>Technology leader with 12+ years of experience spanning cybersecurity, AI governance, privacy, and education. I work at the intersection of risk management and innovation, building frameworks that keep organizations secure while helping the next generation of tech talent thrive. Currently leading across four domains: corporate governance, higher education, ed-tech entrepreneurship, and mathematics enrichment.</p>
+            <div class="currently">
+                <h3>🔮 Currently</h3>
+                <p>Building AI governance frameworks at Klick Health, teaching gifted math students, leading digital transformation at TMTCS, and scaling OJT Connect to bridge Filipino students with North American opportunities.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="experience" class="fade-in">
             <h2>Current Roles</h2>
             <div class="roles">
                 <div class="role-card">
@@ -299,7 +522,7 @@
 
         <hr class="divider">
 
-        <section>
+        <section id="education" class="fade-in">
             <h2>Education</h2>
             <div class="edu-grid">
                 <div class="edu-item">
@@ -335,7 +558,7 @@
 
         <hr class="divider">
 
-        <section>
+        <section class="fade-in">
             <h2>Expertise</h2>
             <div class="tags">
                 <span class="tag">AI Governance</span>
@@ -357,7 +580,7 @@
 
         <hr class="divider">
 
-        <section>
+        <section class="fade-in">
             <h2>Certifications</h2>
             <div class="certs">
                 <div class="cert">🔒 Harvard Cybersecurity Graduate Certificate</div>
@@ -369,7 +592,7 @@
 
         <hr class="divider">
 
-        <section>
+        <section class="fade-in">
             <h2>Projects</h2>
             <div class="projects">
                 <div class="project-card">
@@ -385,9 +608,10 @@
 
         <hr class="divider">
 
-        <section>
+        <section id="connect" class="fade-in">
             <h2>Connect</h2>
             <div class="links">
+                <a href="mailto:kc.adviento@gmail.com" class="email-btn">✉️ Get in Touch</a>
                 <a href="https://www.linkedin.com/in/kcadviento/" target="_blank">LinkedIn ↗</a>
                 <a href="https://instagram.com/kcadviento" target="_blank">Instagram ↗</a>
                 <a href="https://www.goodreads.com/user/show/23249087-kc-adviento" target="_blank">Goodreads ↗</a>
@@ -401,6 +625,48 @@
     </div>
 
     <script>
+        // Dark Mode
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️' : '🌙';
+        }
+        // Restore saved theme
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+                document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️' : '🌙';
+            }
+        })();
+
+        // Sticky nav on scroll
+        let lastScroll = 0;
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
+            }
+            lastScroll = window.scrollY;
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Previous experience toggle
         function togglePrevious() {
             const roles = document.getElementById('previousRoles');
             const btn = document.querySelector('.previous-toggle');
