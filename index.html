@@ -115,6 +115,17 @@
         }
         .theme-toggle:hover { border-color: var(--accent); transform: scale(1.1); }
 
+        /* Hero Photo */
+        .hero-photo { margin-bottom: 24px; }
+        .headshot {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
         /* Hero */
         .hero {
             padding: 120px 0 60px;
@@ -310,6 +321,15 @@
         }
         .project-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
         .project-card p { font-size: 0.9rem; color: var(--muted); }
+        .project-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-link:hover { opacity: 0.7; }
 
         /* Contact */
         .links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
@@ -407,6 +427,9 @@
 
     <div class="container">
         <section class="hero">
+            <div class="hero-photo">
+                <img src="headshot.png" alt="KC Adviento-Lee" class="headshot">
+            </div>
             <h1>KC Adviento-Lee</h1>
             <p class="tagline">AI Governance · Cybersecurity · EdTech Leadership</p>
             <p class="mission">"I build the guardrails so innovation can move fast and stay safe."</p>
@@ -602,6 +625,21 @@
                 <div class="project-card">
                     <h3>H1N1 Flu Vaccine Prediction</h3>
                     <p>Developed a predictive model for H1N1 flu vaccine uptake using demographic data. (MMAI, Queen's University)</p>
+                </div>
+                <div class="project-card">
+                    <h3>Machine Learning for Finance</h3>
+                    <p>Implementation of ML and data science blueprints for financial applications, covering algorithmic trading, risk modeling, and portfolio optimization.</p>
+                    <a href="https://github.com/kcadviento/fin-ml" target="_blank" class="project-link">View on GitHub ↗</a>
+                </div>
+                <div class="project-card">
+                    <h3>MMA 869 Course Resources</h3>
+                    <p>Curated resources and materials for the MMA, MMAI, and GMMA 869 program at Queen's University Smith School of Business.</p>
+                    <a href="https://github.com/kcadviento/869_course" target="_blank" class="project-link">View on GitHub ↗</a>
+                </div>
+                <div class="project-card">
+                    <h3>Poker Analytics</h3>
+                    <p>Python-based poker game simulations, hand evaluations, and statistical analysis tools for probability modeling and decision-making research.</p>
+                    <a href="https://github.com/kcadviento/pokerkit" target="_blank" class="project-link">View on GitHub ↗</a>
                 </div>
             </div>
         </section>
