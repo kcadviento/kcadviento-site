@@ -54,7 +54,7 @@
             -webkit-font-smoothing: antialiased;
             transition: background 0.3s, color 0.3s;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; }
 
         /* Nav */
         nav {
@@ -284,7 +284,7 @@
         .edu-item:last-child { border-bottom: none; }
         .edu-item .degree { font-weight: 500; }
         .edu-item .school { color: var(--muted); font-size: 0.9rem; }
-        .edu-item .year { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+        .edu-item .year { color: var(--muted); font-size: 0.9rem; white-space: nowrap; flex-shrink: 0; padding-left: 16px; }
 
         /* Expertise */
         .tags { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -652,7 +652,6 @@
             <div class="links">
                 <a href="mailto:kc.adviento@gmail.com" class="email-btn">✉️ Get in Touch</a>
                 <a href="https://www.linkedin.com/in/kcadviento/" target="_blank">LinkedIn ↗</a>
-                <a href="https://instagram.com/kcadviento" target="_blank">Instagram ↗</a>
                 <a href="https://www.goodreads.com/user/show/23249087-kc-adviento" target="_blank">Goodreads ↗</a>
                 <a href="https://ojtconnect.com" target="_blank">OJT Connect ↗</a>
             </div>
